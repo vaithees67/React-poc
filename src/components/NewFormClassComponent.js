@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 
 import { action } from "../utils";
 import { FETCH_FORM, FORM_DATA } from "../redux/form/FormActionTypes";
-//import { formSubmit } from "../redux/form/FormActions";
 
 
 
@@ -17,7 +16,6 @@ import RadioButton from './RadioButton'
 import Button from './Button';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-
 
 
 
@@ -35,13 +33,20 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    padding: theme.spacing(8, 8, 8, 8),
+    [theme.breakpoints.down('md')]: {
+      backgroundColor: '#fefefe',
+    }
   },
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
   submit: {
-    margin: theme.spacing(3, 10, 2),
+    marginTop: theme.spacing(8),
+    [theme.breakpoints.down('sm')]: {
+      backgroundColor: theme.palette.secondary.main,
+    }
   },
 });
 
@@ -69,7 +74,7 @@ class NewFormClassComponent extends Component {
     const { classes, fields } = this.props;
     //console.log(fields)
     return (
-      <Container component="main" maxWidth="sm">
+      <Container component="main" maxWidth="lg">
         <CssBaseline />
         <div className={classes.paper}>
           <Typography component="h1" variant="h5">

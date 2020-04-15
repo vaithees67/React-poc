@@ -8,7 +8,7 @@ const initalstate = {
 function formReducer(state = initalstate, action) {
   switch (action.type) {
     case FETCH_FORM_SUCCEEDED: {
-      // console.log(...action.data)
+      console.log(...action.data)
       return {
         ...state,
         fields: [...action.data]

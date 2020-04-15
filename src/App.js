@@ -7,6 +7,9 @@ import { emptyFunction, action } from "./utils";
 import NewFormClassComponent from "./components/NewFormClassComponent";
 import { FETCH_FORM } from "./redux/form/FormActionTypes";
 
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from "./theme"
+
 export class App extends React.Component {
   componentDidMount() {
     console.log('Mount');
@@ -17,7 +20,9 @@ export class App extends React.Component {
   render() {
     return (
       <div>
-        <NewFormClassComponent />
+        <ThemeProvider theme={theme}>
+          <NewFormClassComponent />
+        </ThemeProvider>
       </div>
     );
   }
